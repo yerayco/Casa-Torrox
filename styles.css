@@ -1,148 +1,40 @@
 /* ==========================================================================
-   MASTER CSS - DOÑANA 316B (UNIFICADO Y LIMPIO)
+   REPARACIÓN DE ESTILOS - DOÑANA 316B
    ========================================================================== */
 
-/* CONFIGURACIÓN BASE y RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
-
-body {
-    background-color: #f8fafc;
-    color: #1e293b;
-}
-
-/* BARRA DE NAVEGACIÓN */
-.main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.main-header .logo {
-    font-weight: bold;
-    color: #059669;
-    font-size: 20px;
-}
-
-.btn-nav {
-    background: #059669;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 9999px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-    transition: background 0.2s ease;
-}
-
-.btn-nav:hover {
-    background: #047857;
-}
-
-/* SECCIÓN HERO (SEGUNDA CAPTURA) */
+/* Mantener el diseño original del Hero y evitar el fondo gris plano */
 .hero-section {
     position: relative;
-    /* Reemplaza 'foto-piscina.jpg' con tu fondo real de la piscina */
-    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('foto-piscina.jpg') no-repeat center center/cover;
-    padding: 120px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh; /* Ajusta según la altura de tu diseño original */
+    padding: 80px 20px;
     text-align: center;
-    color: #ffffff;
 }
 
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
+/* Forzar que el texto del Hero resalte correctamente */
+.hero-content h1, 
+.hero-content p {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* Sombra para que se lea sobre la foto */
 }
 
-.badge-location {
-    background: rgba(5, 150, 105, 0.25);
-    color: #34d399;
-    padding: 6px 14px;
-    border-radius: 9999px;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
-.hero-section h1 {
-    font-size: 48px;
-    font-weight: 800;
-    margin-bottom: 15px;
-}
-
-.hero-section p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 35px;
-    opacity: 0.95;
-}
-
-/* BOTÓN PREMIUM INTERACTIVO AIRBNB */
-.btn-disponibilidad {
-    background: #00cc88;
-    color: #ffffff;
-    padding: 16px 36px;
-    border-radius: 12px;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    transition: background 0.2s ease, transform 0.2s ease;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
-.btn-disponibilidad:hover {
-    background: #00b377;
-    transform: translateY(-1px);
-}
-
-/* DISEÑO Y ANIMACIÓN DE LA GALERÍA */
-.galeria-container {
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.galeria-container h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 28px;
-    color: #0f172a;
-}
-
-.galeria-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
+/* ANIMACIÓN DE LA GALERÍA DE FOTOS */
+.img-zoom {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .img-card {
     overflow: hidden;
-    border-radius: 16px;
     cursor: pointer;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    background: #e2e8f0;
-}
-
-.img-zoom {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .img-card:hover .img-zoom {
-    transform: scale(1.05);
+    transform: scale(1.05) !important;
 }
 
 /* VISUALIZADOR DE IMÁGENES (LIGHTBOX MODAL) */
@@ -152,14 +44,13 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.85) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: opacity 0.3s ease;
 }
 
 #lightbox-img {
@@ -175,17 +66,11 @@ body {
     right: 30px;
     color: #ffffff;
     font-size: 44px;
-    font-weight: 300;
     cursor: pointer;
     user-select: none;
-    transition: color 0.2s;
 }
 
-#close-lightbox:hover {
-    color: #cbd5e1;
-}
-
-/* CLASE AUXILIAR DE CONTROL */
+/* CLASE CRÍTICA DE CONTROL */
 .hidden {
     display: none !important;
 }

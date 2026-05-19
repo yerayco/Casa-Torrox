@@ -1,69 +1,65 @@
 /**
- * SYSTEM CONTROLLER DOÑANA 316B (EDICIÓN ULTRA-SIMPLIFICADA)
+ * SYSTEM CONTROLLER DOÑANA 316B - REPARADO
  */
-
 (function () {
     'use strict';
 
-    // Captura inicial tras carga del DOM
     document.addEventListener('DOMContentLoaded', () => {
-        inicializarEventosGaleria();
         inicializarRedireccionAirbnb();
+        inicializarEventosGaleria();
     });
 
-    // 1. MANEJADOR SEGURO DE REDIRECCIÓN A AIRBNB
+    // Redirección inteligente al detectar el botón
     function inicializarRedireccionAirbnb() {
-        // Selecciona todos los botones o enlaces de la página
-        const elementosInteractivos = document.querySelectorAll('button, a');
+        // Busca elementos que contengan la clase o el texto del botón
+        const botones = document.querySelectorAll('.btn-disponibilidad, button, a');
         
-        elementosInteractivos.forEach(elemento => {
-            // Si el texto coincide exactamente con tu botón de la captura
-            if (elemento.textContent.trim().toLowerCase() === 'consultar disponibilidad') {
-                elemento.addEventListener('click', (event) => {
-                    event.preventDefault(); // Detiene cualquier acción nativa secundaria
-                    window.open('https://airbnb.com/h/solparaiso-torrox-park', '_blank');
-                });
+        botones.forEach(boton => {
+            const texto = boton.textContent.trim().toLowerCase();
+            if (texto === 'consultar disponibilidad' || texto === 'reservar ahora') {
+                // Modificamos el href directamente si es un enlace
+                if (boton.tagName === 'A') {
+                    boton.setAttribute('href', 'https://airbnb.com/h/solparaiso-torrox-park');
+                    boton.setAttribute('target', '_blank');
+                    boton.setAttribute('rel', 'noopener noreferrer');
+                } else {
+                    // Si es un <button>, añadimos evento click
+                    boton.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        window.open('https://airbnb.com/h/solparaiso-torrox-park', '_blank');
+                    });
+                }
             }
         });
     }
 
-    // 2. CAPTURADOR Y GESTOR DEL VISOR DE FOTOS (LIGHTBOX)
+    // Control del Lightbox para las fotos
     function inicializarEventosGaleria() {
         const cards = document.querySelectorAll('.img-card');
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const closeBtn = document.getElementById('close-lightbox');
 
-        // Verificar la existencia de nodos críticos en el DOM antes de asignar eventos
         if (!lightbox || !lightboxImg) return;
 
         cards.forEach(card => {
             card.addEventListener('click', () => {
                 const imgNode = card.querySelector('img');
-                if (imgNode) {
+                if (imgNode && imgNode.src) {
                     lightboxImg.src = imgNode.src;
                     lightbox.classList.remove('hidden');
                 }
             });
         });
 
-        // Evento para cerrar haciendo click en la "X"
         if (closeBtn) {
-            closeBtn.addEventListener('click', cerrarModalLightbox);
+            closeBtn.addEventListener('click', () => lightbox.classList.add('hidden'));
         }
 
-        // Evento para cerrar haciendo click en el fondo oscuro difuminado
-        lightbox.addEventListener('click', (event) => {
-            if (event.target === lightbox) {
-                cerrarModalLightbox();
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.add('hidden');
             }
         });
-    }
-
-    function cerrarModalLightbox() {
-        const lb = document.getElementById('lightbox');
-        if (lb) {
-            lb.classList.add('hidden');
-        }
     }
 })();
