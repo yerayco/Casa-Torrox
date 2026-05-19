@@ -206,3 +206,39 @@ body {
 .hidden {
     display: none !important;
 }
+
+/* ==========================================================================
+   ESTILOS COMPLEMENTARIOS: PANEL DE INFORMACIÓN
+   ========================================================================== */
+.info-section {
+    padding: 60px 20px 20px 20px;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.info-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.info-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f1f5f9;
+}
+
+.info-card h3 {
+    font-size: 20px;
+    color: #0f172a;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.info-card p {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.6;
+}
