@@ -1,0 +1,97 @@
+/* ==========================================================================
+   MASTER CSS - DOÑANA 316B (CORREGIDO Y BLINDADO)
+   ========================================================================== */
+
+/* CENTRADO MATEMÁTICO DEL CALENDARIO INLINE */
+#calendario-inline {
+    display: none !important;
+}
+
+.flatpickr-calendar.inline {
+    display: inline-block !important;
+    position: relative !important;
+    margin: 0 auto !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+    border-radius: 24px !important;
+    border: 1px solid #f1f5f9 !important;
+    background: #ffffff !important;
+}
+
+/* ELIMINAR CUADRADOS ROTOS (Flechas nativas con fallback de texto limpio) */
+.flatpickr-prev-month svg, 
+.flatpickr-next-month svg {
+    display: none !important;
+}
+
+.flatpickr-prev-month::after {
+    content: "‹" !important;
+    font-size: 28px !important;
+    color: #475569 !important;
+    font-weight: bold !important;
+    line-height: 30px !important;
+    display: block !important;
+}
+
+.flatpickr-next-month::after {
+    content: "›" !important;
+    font-size: 28px !important;
+    color: #475569 !important;
+    font-weight: bold !important;
+    line-height: 30px !important;
+    display: block !important;
+}
+
+/* Posición base de los contenedores de las flechas */
+.flatpickr-prev-month, 
+.flatpickr-next-month {
+    top: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 9999px !important;
+    width: 34px !important;
+    height: 34px !important;
+    transition: background-color 0.2s ease !important;
+}
+
+/* CORRECCIÓN DEL BUG: Pseudo-clase :hover declarada correctamente */
+.flatpickr-prev-month:hover, 
+.flatpickr-next-month:hover {
+    background-color: #f1f5f9 !important;
+}
+
+/* COLORES PREMIUM AIRBNB STYLE */
+.flatpickr-day.selected, 
+.flatpickr-day.startRange, 
+.flatpickr-day.endRange {
+    background: #059669 !important;
+    border-color: #059669 !important;
+    color: white !important;
+}
+
+.flatpickr-day.inRange {
+    background: #ecfdf5 !important;
+    box-shadow: none !important;
+}
+
+.flatpickr-day.disabled {
+    color: #cbd5e1 !important;
+    text-decoration: line-through;
+    background: #f8fafc !important;
+    cursor: not-allowed !important;
+    opacity: 0.4;
+}
+
+/* DISEÑO Y ANIMACIÓN DE LA GALERÍA */
+.img-zoom {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.img-card:hover .img-zoom {
+    transform: scale(1.05);
+}
+
+/* VISUALIZADOR DE IMÁGENES (LIGHTBOX) */
+#lightbox {
+    backdrop-filter: blur(12px);
+}
