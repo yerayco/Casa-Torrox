@@ -1,51 +1,13 @@
 /* ==========================================================================
-   ESTILOS CORREGIDOS Y AJUSTADOS - SOL PARAISO
+   ESTILOS BLINDADOS Y REPARADOS - SOL PARAISO
    ========================================================================== */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-
-body {
-    background-color: #ffffff;
-    color: #1e293b;
-}
-
-/* HEADER ALTERNATIVO */
-.main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background: #ffffff;
-    border-bottom: 1px solid #f1f5f9;
-}
-
-.main-header .logo {
-    font-weight: bold;
-    color: #059669;
-    font-size: 20px;
-}
-
-.btn-nav {
-    background: #059669;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 9999px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-/* HERO CON LA FOTO MÁS GRANDE DETRÁS DE SOL PARAISO */
+/* 1. SECCIÓN HERO (La foto grande se coloca detrás de Sol Paraiso) */
 .hero-section {
     position: relative;
-    /* Apunta exactamente a tu foto principal de fondo */
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('principal.jpg') no-repeat center center/cover;
-    min-height: 65vh;
+    /* Aquí ponemos la ruta de tu primera foto de WhatsApp (la de la piscina) */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('imagenes/WhatsApp Image 2026-05-14 at 21.00.17.jpeg') no-repeat center center/cover;
+    min-height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,41 +15,25 @@ body {
     padding: 60px 20px;
 }
 
-.hero-content {
-    max-width: 800px;
-}
-
-.badge-location {
-    background: #22c55e33;
-    color: #4ade80;
-    padding: 6px 14px;
-    border-radius: 9999px;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
 .hero-content h1 {
     font-size: 52px;
-    color: #ffffff;
+    color: #ffffff !important;
     font-weight: 800;
-    margin-bottom: 15px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 
 .hero-content p {
     font-size: 18px;
-    color: #ffffff;
-    line-height: 1.6;
-    margin-bottom: 35px;
-    opacity: 0.95;
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    max-width: 600px;
+    margin: 0 auto 30px auto;
 }
 
-/* BOTÓN VERDE CONSULTAR DISPONIBILIDAD */
+/* 2. EL BOTÓN VERDE ESTILO AIRBNB */
 .btn-disponibilidad {
-    background: #00cc88;
-    color: #ffffff;
+    background: #00cc88 !important;
+    color: #ffffff !important;
     padding: 16px 36px;
     border-radius: 12px;
     font-weight: bold;
@@ -99,38 +45,26 @@ body {
 }
 
 .btn-disponibilidad:hover {
-    background: #00b377;
+    background: #00b377 !important;
     transform: translateY(-2px);
 }
 
-/* CUADRÍCULA DE LA GALERÍA CORREGIDA */
-.galeria-container {
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.galeria-container h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 28px;
-    font-weight: 700;
-}
-
+/* 3. CUADRÍCULA DE LA GALERÍA (Mantiene tus clases originales) */
 .galeria-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Estilo para las 4 primeras fotos que impresionan más (puedes destacar su tamaño si quieres en el futuro) */
 .img-card {
     position: relative;
     overflow: hidden;
     border-radius: 16px;
     cursor: pointer;
     height: 250px;
-    background: #f1f5f9;
 }
 
 .img-zoom {
@@ -145,7 +79,7 @@ body {
     transform: scale(1.06);
 }
 
-/* VISUALIZADOR LIGHTBOX */
+/* 4. VISUALIZADOR LIGHTBOX (Para ver las fotos en grande al hacer click) */
 #lightbox {
     position: fixed;
     top: 0;
@@ -164,7 +98,7 @@ body {
 #lightbox-img {
     max-width: 90%;
     max-height: 80%;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
 #close-lightbox {
