@@ -8,61 +8,62 @@
 </head>
 <body>
 
-    <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-        <div class="logo" style="font-weight: bold; color: #059669; font-size: 20px;">
-            Doñana 316B
-        </div>
+    <header class="main-header">
+        <div class="logo">Doñana 316B</div>
         <nav>
-            <a href="https://airbnb.com/h/solparaiso-torrox-park" target="_blank" rel="noopener noreferrer" style="background: #059669; color: white; padding: 10px 20px; border-radius: 9999px; text-decoration: none; font-weight: bold; font-size: 14px;">
+            <a href="https://airbnb.com/h/solparaiso-torrox-park" target="_blank" rel="noopener noreferrer" class="btn-nav">
                 Reservar Ahora
             </a>
         </nav>
     </header>
 
-    <section class="hero-section" style="position: relative; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('tu-imagen-de-la-piscina.jpg') no-repeat center center/cover; padding: 100px 20px; text-align: center; color: white;">
-        <div class="hero-content" style="max-width: 800px; margin: 0 auto;">
-            <span class="badge-location" style="background: rgba(5, 150, 105, 0.2); color: #34d399; padding: 6px 12px; border-radius: 9999px; font-size: 12px; font-weight: bold; letter-spacing: 1px;">
-                TORROX PARK • COSTA DEL SOL
-            </span>
-            <h1 style="font-size: 48px; margin: 20px 0 10px 0; font-weight: 800;">Sol Paraiso</h1>
-            <p style="font-size: 18px; margin-bottom: 30px; opacity: 0.9;">
-                Tu estancia exclusiva en un entorno idílico. Desconecta con total comodidad, piscina, vistas espectaculares y reserva inmediata garantizada.
-            </p>
-            
-            <a href="https://airbnb.com/h/solparaiso-torrox-park" target="_blank" rel="noopener noreferrer" class="btn-disponibilidad" style="background: #00cc88; color: white; padding: 15px 35px; border-radius: 12px; font-weight: bold; text-decoration: none; display: inline-block; font-size: 16px; transition: background 0.3s;">
+    <section class="hero-section">
+        <div class="hero-content">
+            <span class="badge-location">TORROX PARK • COSTA DEL SOL</span>
+            <h1>Sol Paraiso</h1>
+            <p>Tu estancia exclusiva en un entorno idílico. Desconecta con total comodidad, piscina, vistas espectaculares y reserva inmediata garantizada.</p>
+            <a href="https://airbnb.com/h/solparaiso-torrox-park" target="_blank" rel="noopener noreferrer" class="btn-disponibilidad">
                 Consultar Disponibilidad
             </a>
         </div>
     </section>
 
-    <main style="padding: 40px 20px; max-width: 1200px; margin: 0 auto;">
-        <h2 style="text-align: center; margin-bottom: 30px; color: #1e293b;">Galería de la Propiedad</h2>
+    <main class="galeria-container">
+        <h2>Galería de la Propiedad</h2>
         
-        <div class="galeria-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-            
-            <div class="img-card" style="overflow: hidden; border-radius: 16px; cursor: pointer;">
-                <img src="foto1.jpg" alt="Piscina Sol Paraiso" class="img-zoom" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+        <div class="galeria-grid">
+            <div class="img-card Destacada">
+                <img src="galeria1.jpg" alt="Vista Impresionante 1" class="img-zoom">
             </div>
-            
-            <div class="img-card" style="overflow: hidden; border-radius: 16px; cursor: pointer;">
-                <img src="foto2.jpg" alt="Interior Doñana 316B" class="img-zoom" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+            <div class="img-card Destacada">
+                <img src="galeria2.jpg" alt="Vista Impresionante 2" class="img-zoom">
+            </div>
+            <div class="img-card Destacada">
+                <img src="galeria3.jpg" alt="Vista Impresionante 3" class="img-zoom">
+            </div>
+            <div class="img-card Destacada">
+                <img src="galeria4.jpg" alt="Vista Impresionante 4" class="img-zoom">
             </div>
 
-            <div class="img-card" style="overflow: hidden; border-radius: 16px; cursor: pointer;">
-                <img src="foto3.jpg" alt="Vistas Torrox Park" class="img-zoom" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+            <div class="img-card">
+                <img src="galeria5.jpg" alt="Interior Doñana" class="img-zoom">
             </div>
-            
+            <div class="img-card">
+                <img src="galeria6.jpg" alt="Detalle Propiedad" class="img-zoom">
+            </div>
+            <div class="img-card">
+                <img src="galeria7.jpg" alt="Zona Común" class="img-zoom">
+            </div>
+            <div class="img-card">
+                <img src="galeria8.jpg" alt="Entorno Torrox" class="img-zoom">
+            </div>
         </div>
     </main>
 
-    <div id="lightbox" class="hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: center; z-index: 9999;">
-        <span id="close-lightbox" style="position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer;">&times;</span>
-        <img id="lightbox-img" src="" alt="Vista ampliada" style="max-width: 90%; max-height: 85%; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.4);">
+    <div id="lightbox" class="hidden">
+        <span id="close-lightbox">&times;</span>
+        <img id="lightbox-img" src="" alt="Vista ampliada">
     </div>
-
-    <style>
-        .hidden { display: none !important; }
-    </style>
 
     <script src="script.js"></script>
 </body>
