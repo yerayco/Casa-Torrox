@@ -1,89 +1,143 @@
 /* ==========================================================================
-   MASTER CSS - DOÑANA 316B (CORREGIDO Y BLINDADO)
+   MASTER CSS - DOÑANA 316B (UNIFICADO Y LIMPIO)
    ========================================================================== */
 
-/* CENTRADO MATEMÁTICO DEL CALENDARIO INLINE */
-#calendario-inline {
-    display: none !important;
+/* CONFIGURACIÓN BASE y RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-.flatpickr-calendar.inline {
-    display: inline-block !important;
-    position: relative !important;
-    margin: 0 auto !important;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
-    border-radius: 24px !important;
-    border: 1px solid #f1f5f9 !important;
-    background: #ffffff !important;
+body {
+    background-color: #f8fafc;
+    color: #1e293b;
 }
 
-/* ELIMINAR CUADRADOS ROTOS (Flechas nativas con fallback de texto limpio) */
-.flatpickr-prev-month svg, 
-.flatpickr-next-month svg {
-    display: none !important;
+/* BARRA DE NAVEGACIÓN */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.flatpickr-prev-month::after {
-    content: "‹" !important;
-    font-size: 28px !important;
-    color: #475569 !important;
-    font-weight: bold !important;
-    line-height: 30px !important;
-    display: block !important;
+.main-header .logo {
+    font-weight: bold;
+    color: #059669;
+    font-size: 20px;
 }
 
-.flatpickr-next-month::after {
-    content: "›" !important;
-    font-size: 28px !important;
-    color: #475569 !important;
-    font-weight: bold !important;
-    line-height: 30px !important;
-    display: block !important;
+.btn-nav {
+    background: #059669;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background 0.2s ease;
 }
 
-/* Posición base de los contenedores de las flechas */
-.flatpickr-prev-month, 
-.flatpickr-next-month {
-    top: 10px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    border-radius: 9999px !important;
-    width: 34px !important;
-    height: 34px !important;
-    transition: background-color 0.2s ease !important;
+.btn-nav:hover {
+    background: #047857;
 }
 
-/* CORRECCIÓN DEL BUG: Pseudo-clase :hover declarada correctamente */
-.flatpickr-prev-month:hover, 
-.flatpickr-next-month:hover {
-    background-color: #f1f5f9 !important;
+/* SECCIÓN HERO (SEGUNDA CAPTURA) */
+.hero-section {
+    position: relative;
+    /* Reemplaza 'foto-piscina.jpg' con tu fondo real de la piscina */
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('foto-piscina.jpg') no-repeat center center/cover;
+    padding: 120px 20px;
+    text-align: center;
+    color: #ffffff;
 }
 
-/* COLORES PREMIUM AIRBNB STYLE */
-.flatpickr-day.selected, 
-.flatpickr-day.startRange, 
-.flatpickr-day.endRange {
-    background: #059669 !important;
-    border-color: #059669 !important;
-    color: white !important;
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.flatpickr-day.inRange {
-    background: #ecfdf5 !important;
-    box-shadow: none !important;
+.badge-location {
+    background: rgba(5, 150, 105, 0.25);
+    color: #34d399;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 20px;
 }
 
-.flatpickr-day.disabled {
-    color: #cbd5e1 !important;
-    text-decoration: line-through;
-    background: #f8fafc !important;
-    cursor: not-allowed !important;
-    opacity: 0.4;
+.hero-section h1 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.hero-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    opacity: 0.95;
+}
+
+/* BOTÓN PREMIUM INTERACTIVO AIRBNB */
+.btn-disponibilidad {
+    background: #00cc88;
+    color: #ffffff;
+    padding: 16px 36px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: background 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-disponibilidad:hover {
+    background: #00b377;
+    transform: translateY(-1px);
 }
 
 /* DISEÑO Y ANIMACIÓN DE LA GALERÍA */
+.galeria-container {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.galeria-container h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+    color: #0f172a;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.img-card {
+    overflow: hidden;
+    border-radius: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    background: #e2e8f0;
+}
+
 .img-zoom {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -91,7 +145,47 @@
     transform: scale(1.05);
 }
 
-/* VISUALIZADOR DE IMÁGENES (LIGHTBOX) */
+/* VISUALIZADOR DE IMÁGENES (LIGHTBOX MODAL) */
 #lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+}
+
+#lightbox-img {
+    max-width: 90%;
+    max-height: 85%;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+#close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #ffffff;
+    font-size: 44px;
+    font-weight: 300;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s;
+}
+
+#close-lightbox:hover {
+    color: #cbd5e1;
+}
+
+/* CLASE AUXILIAR DE CONTROL */
+.hidden {
+    display: none !important;
 }
